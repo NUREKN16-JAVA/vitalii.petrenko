@@ -28,7 +28,7 @@ public class UserTest {
     @Before
     public void setUp() throws ParseException {
         user = new User(
-            0,
+            1L,
             FIRST_NAME,
             LAST_NAME,
             new SimpleDateFormat(DATE_FORMAT).parse(BIRTHDAY_TEMPLATE)
@@ -38,7 +38,7 @@ public class UserTest {
     }
     //-------------------------------
     @Test
-    public void testGetName() {
+    public void testGetFullName() {
         String expect = FULL_NAME;
         String actual = user.getFullName();
 
