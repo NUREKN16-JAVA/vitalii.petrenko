@@ -1,72 +1,94 @@
-package ua.nure.petrenko_vitaliy.usermanagement;
-//--
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Objects;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
-//--
-public class User implements Serializable {
-    private Long id;
-    private Date birthday;
+package main.java.ua.nure.kn.petrenko_vitaliy.usermanagment;
 
-    private String firstName;
-    private String lastName;
+import java.util.Calendar; 
+import java.util.Date; 
 
-    public User() {}
-    public User(Long id, String firstName, String lastName, Date birthday) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthday = birthday;
-    }
-    //-- 
-    public Long getId() {
-        return id;
-    }
-    //--
-    public String getFirstName() {
-        return firstName;
-    }
-    //--
-    public String getLastName() {
-        return lastName;
-    }
-    //--
-    public String getFullName() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(lastName)
-            .append(", ")
-            .append(firstName);
-        return stringBuilder.toString();
-    }
-    //--
-    public Date getBirthday() {
-        return birthday;
-    }
-    //--
-    public int getAge() {
-        LocalDate birthLocalDate = birthday.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        LocalDate currentLocalDate = LocalDate.now(ZoneId.systemDefault());
-        return (int) ChronoUnit.YEARS.between(birthLocalDate, currentLocalDate);
-    }
-    //--
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    //--
-    public void setId(Long id) {
-        this.id = id;
-    }
-    //--
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    //--
-    public void setbirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
+public class User {
+	private Long id;
+	private String firstName;
+	private String lastName;
+	private Date dateOfBirth;
+	
+	public User(String firstName, String lastName, Date date) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dateOfBirth = date;
+	}
+	
+	public User(Long id, String firstName, String lastName, Date date) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dateOfBirth = date;
+	}
+	
+	public User() {
+		//STUB
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public Date getDateOfBirthd() {
+		return dateOfBirth;
+	}
+	
+	public void setDateOfBirthd(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	
+	public String getFullName() {
+		return getLastName()+", "+getFirstName();
+	}
+	
+	public int getAge() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(new Date());
+		int currentYear = calendar.get(Calendar.YEAR);
+		calendar.setTime(getDateOfBirthd());
+		int year = calendar.get(Calendar.YEAR);
+		
+		return currentYear-year;
+	}
+	
+	public boolean equals(Object obj) {
+	    if (obj == null) {
+	        return false;
+	    }
+	    if (this == obj) {
+	        return true;
+	    }
+	    if (this.getId() == null && ((User) obj).getId() == null) {
+	        return true;
+	    }
+	    return this.getId().equals(((User) obj).getId());
+	}
+	
+	public int hashCode() {
+	    if (this.getId() == null) {
+	        return 0;
+	    }
+	    return this.getId().hashCode();
+	}
 }
