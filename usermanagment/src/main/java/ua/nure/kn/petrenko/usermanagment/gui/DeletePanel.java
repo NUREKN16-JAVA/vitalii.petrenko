@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package main.java.ua.nure.kn.petrenko.usermanagment.gui;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -10,9 +10,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DatabaseCustomException;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.util.Messages;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DatabaseCustomException;
+import main.java.ua.nure.kn.petrenko.usermanagment.util.Messages;
 
 public class DeletePanel extends JPanel implements ActionListener {
 	
@@ -31,7 +31,7 @@ public class DeletePanel extends JPanel implements ActionListener {
 		initialize();
 	}
 	private void initialize() {
-		this.setName("deletePanel");   
+		this.setName("deletePanel"); //$NON-NLS-1$
 		this.setLayout(new BorderLayout());
 		this.add(getFieldPanel(), BorderLayout.NORTH);
 		this.add(getButtonPanel(), BorderLayout.SOUTH);
@@ -50,9 +50,9 @@ public class DeletePanel extends JPanel implements ActionListener {
 	private JButton getOkButton() {
 		if (okButton == null) {
 			okButton = new JButton();
-			okButton.setText(Messages.getString("AddPanel.ok"));   
-			okButton.setName("okButton");   
-			okButton.setActionCommand("ok");   
+			okButton.setText(Messages.getString("AddPanel.ok")); //$NON-NLS-1$
+			okButton.setName("okButton"); //$NON-NLS-1$
+			okButton.setActionCommand("ok"); //$NON-NLS-1$
 			okButton.addActionListener(this);
 		}
 		return okButton;
@@ -61,9 +61,9 @@ public class DeletePanel extends JPanel implements ActionListener {
 	private JButton getCancelButton() {
 		if (cancelButton == null) {
 			cancelButton = new JButton();
-			cancelButton.setText(Messages.getString("AddPanel.cancel"));   
-			cancelButton.setName("cancelButton");   
-			cancelButton.setActionCommand("cancel");   
+			cancelButton.setText(Messages.getString("AddPanel.cancel")); //$NON-NLS-1$
+			cancelButton.setName("cancelButton"); //$NON-NLS-1$
+			cancelButton.setActionCommand("cancel"); //$NON-NLS-1$
 			cancelButton.addActionListener(this);
 		}
 		return cancelButton;
@@ -72,10 +72,10 @@ public class DeletePanel extends JPanel implements ActionListener {
 		if (fieldPanel == null) {
 			fieldPanel = new JPanel();
 			fieldPanel.setLayout(new GridLayout(4, 2));
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.first_name"), getFirstNameLabel());   
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.last_name"), getLastNameLabel());   
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.date_of_birth"), getDateOfBirthLabel());   
-			fieldPanel.add(new JLabel(Messages.getString("DeletePanel.accept_question")));   
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.first_name"), getFirstNameLabel()); //$NON-NLS-1$
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.last_name"), getLastNameLabel()); //$NON-NLS-1$
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.date_of_birth"), getDateOfBirthLabel()); //$NON-NLS-1$
+			fieldPanel.add(new JLabel(Messages.getString("DeletePanel.accept_question"))); //$NON-NLS-1$
 		}
 		return fieldPanel;
 	}
@@ -83,7 +83,7 @@ public class DeletePanel extends JPanel implements ActionListener {
 	private JLabel getDateOfBirthLabel() {
 		if (dateOfBirthLabel == null) {
 			dateOfBirthLabel = new JLabel();
-			dateOfBirthLabel.setName("dateOfBirthLabel");   
+			dateOfBirthLabel.setName("dateOfBirthLabel"); //$NON-NLS-1$
 		}
 		return dateOfBirthLabel;
 	}
@@ -91,7 +91,7 @@ public class DeletePanel extends JPanel implements ActionListener {
 	private JLabel getLastNameLabel() {
 		if (lastNameLabel == null) {
 			lastNameLabel = new JLabel();
-			lastNameLabel.setName("lastNameLabel");   
+			lastNameLabel.setName("lastNameLabel"); //$NON-NLS-1$
 		}
 		return lastNameLabel;
 	}
@@ -106,18 +106,18 @@ public class DeletePanel extends JPanel implements ActionListener {
 	private JLabel getFirstNameLabel() {
 		if (firstNameLabel == null) {
 			firstNameLabel = new JLabel();
-			firstNameLabel.setName("firstNameLabel");   
+			firstNameLabel.setName("firstNameLabel"); //$NON-NLS-1$
 		}
 		return firstNameLabel;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if ("ok".equalsIgnoreCase(e.getActionCommand())) {   
+		if ("ok".equalsIgnoreCase(e.getActionCommand())) { //$NON-NLS-1$
 			try {
 				parent.getDao().delete(user);
 			} catch (DatabaseCustomException e1) {
-				JOptionPane.showMessageDialog(this, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);   
+				JOptionPane.showMessageDialog(this, e1.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$
 			}
 		}
 		this.setVisible(false);

@@ -1,10 +1,11 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database;
+package main.java.ua.nure.kn.petrenko.usermanagment.database;
+//	protected static final String DAO_FACTORY ="dao.kn.petrenko.usermanagement.db.UserDao";;
 import java.io.IOException;
 import java.util.Properties;
 
 public abstract class DaoFactory {
 
-	protected static final String USER_DAO = "dao.kn.vitalii.petrenko.usermanagement.db.UserDao";
+	protected static final String USER_DAO = "dao.kn.petrenko.usermanagement.db.UserDao";
 	protected static final String DAO_FACTORY = "dao.factory";
 	protected static Properties properties;
 	
@@ -16,6 +17,7 @@ public abstract class DaoFactory {
 			properties.load(DaoFactory.class.getClassLoader().getResourceAsStream("settings.properties"));
 		} catch (IOException e) {
 			throw new RuntimeException(e);
+			// e.printStackTrace();
 		}
 	}
 	    

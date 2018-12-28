@@ -1,9 +1,9 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.database;
+package test.java.ua.nure.kn.petrenko.usermanagment.database;
 
 import com.mockobjects.dynamic.Mock;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DaoFactory;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.UserDao;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DaoFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.UserDao;
 
 public class MockDaoFactory extends DaoFactory {
 	private Mock mockUserDao;

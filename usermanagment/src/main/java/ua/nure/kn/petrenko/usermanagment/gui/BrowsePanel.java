@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package main.java.ua.nure.kn.petrenko.usermanagment.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -13,9 +13,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DatabaseCustomException;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.util.Messages;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DatabaseCustomException;
+import main.java.ua.nure.kn.petrenko.usermanagment.util.Messages;
 
 public class BrowsePanel extends JPanel implements ActionListener {
 

@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database;
+package main.java.ua.nure.kn.petrenko.usermanagment.database;
 
 import java.util.Collection;
 import java.sql.CallableStatement;
@@ -8,10 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+
+import main.java.ua.nure.kn.petrenko.usermanagment.agent.User;
+
 import java.sql.Date;
 
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
 
 public class HsqldbUserDao implements UserDao {
 
@@ -20,12 +22,15 @@ public class HsqldbUserDao implements UserDao {
 	private ConnectionFactory connectionFactory;
 	private static final String FIND_QUERY = "SELECT id, firstname, lastname, dateofbirth FROM users WHERE id=?";
 	private static final String UPDATE_QUERY = "UPDATE users SET firstname=?, lastname=?, dateofbirth=? WHERE id=?";
+	private static final String FIND_BY_NAMES_QUERY = "SELECT id, firstname, lastname, dateofbirth FROM users WHERE firstname=? AND lastname=?";
 	private static final String DELETE_QUERY = "DELETE FROM users WHERE id=?";
 	
 	public HsqldbUserDao() {
+		//super();
 	}
 	
 	public HsqldbUserDao(ConnectionFactory connectionFactory) {
+		//super();
 		this.connectionFactory = connectionFactory;
 	}
 	
@@ -147,6 +152,33 @@ public class HsqldbUserDao implements UserDao {
 	        }
 	        return result;
 	}
+	
+	public Collection find(String firstName, String lastName) throws DatabaseCustomException {
+		Collection<User> result = new LinkedList<User>();
+		try {
+			Connection connection = connectionFactory.createConnection();
+			PreparedStatement statement = connection.prepareStatement(FIND_BY_NAMES_QUERY);
+			statement.setString(1, firstName);
+			statement.setString(2, lastName);
+			ResultSet allUsers = statement.executeQuery();
+			while (allUsers.next()) {
+				User user = new User();
+				user.setId(allUsers.getLong(1));
+				user.setFirstName(allUsers.getString(2));
+				user.setLastName(allUsers.getString(3));
+				user.setDateOfBirthd(allUsers.getDate(4).toLocalDate());
+				result.add(user);
+			}
+			allUsers.close();
+			statement.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 	
 	public Collection findAll() throws DatabaseCustomException {
 	    Collection result = new  LinkedList();

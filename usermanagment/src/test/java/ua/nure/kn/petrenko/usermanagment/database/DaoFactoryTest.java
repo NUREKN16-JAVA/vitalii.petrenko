@@ -1,6 +1,6 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.database;
+package test.java.ua.nure.kn.petrenko.usermanagment.database;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.*;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import junit.framework.TestCase;

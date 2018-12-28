@@ -1,15 +1,15 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package main.java.ua.nure.kn.petrenko.usermanagment.gui;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.util.Messages;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.util.Messages;
 
 public class UserTableModel extends AbstractTableModel {
-	private static final String[] COLUMN_NAMES = {Messages.getString("UserTableModel.id"), Messages.getString("UserTableModel.first_name"), Messages.getString("UserTableModel.last_name") };      
+	private static final String[] COLUMN_NAMES = {Messages.getString("UserTableModel.id"), Messages.getString("UserTableModel.first_name"), Messages.getString("UserTableModel.last_name") }; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	private static final Class[] COLUMN_CLASSES ={Long.class, String.class, String.class};
     private List users = null;
     
@@ -47,4 +47,12 @@ public class UserTableModel extends AbstractTableModel {
         
         return null;
     }
+	
+	public void addUsers(Collection users){
+		this.users.addAll(users);
+	}
+	
+	public void clearUsers(){
+		this.users = new ArrayList();
+	}
 }

@@ -8,12 +8,12 @@
 	<classpathentry kind="lib" path="src/lib/regexp-1.3.jar"/>
 	<classpathentry kind="lib" path="src/lib/dbunit-2.1.jar"/>
 	<classpathentry kind="lib" path="src/lib/hsqldb-1.8.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vitalii.petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/jakarta-oro-2.0.8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vitalii.petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/jdom.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vitalii.petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/jsp-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vitalii.petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/nekohtml.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vitalii.petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vitalii.petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/xml-apis.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vitalii.petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/lib/mockrunner-servlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/jdom.jar"/>
+	<classpathentry kind="lib" path="C:/Users/petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/nekohtml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/jar/xml-apis.jar"/>
+	<classpathentry kind="lib" path="C:/Users/petrenko/git/vitalii.petrenko/usermanagment/src/lib/mockrunner-0.3.6/lib/mockrunner-servlet.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

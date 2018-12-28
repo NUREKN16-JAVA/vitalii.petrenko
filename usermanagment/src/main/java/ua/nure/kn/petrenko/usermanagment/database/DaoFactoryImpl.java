@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database;
+package main.java.ua.nure.kn.petrenko.usermanagment.database;
 
 public class DaoFactoryImpl extends DaoFactory {
 

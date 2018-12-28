@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.web;
+package main.java.ua.nure.kn.petrenko.usermanagment.web;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.ValidationException;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DaoFactory;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DatabaseCustomException;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DaoFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DatabaseCustomException;
 
 
 public class EditServlet extends HttpServlet {

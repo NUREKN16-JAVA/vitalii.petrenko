@@ -1,13 +1,13 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package test.java.ua.nure.kn.petrenko.usermanagment.gui;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.ConnectionFactory;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DatabaseCustomException;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.UserDao;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.ConnectionFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DatabaseCustomException;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.UserDao;
 
 public class MockUserDao implements UserDao {
     private long id = 0;
@@ -48,5 +48,6 @@ public class MockUserDao implements UserDao {
 	
 	@Override
 	public void setConnectionFactory(ConnectionFactory connectionFactory) {
+		// TODO Auto-generated method stub
 	}
 }

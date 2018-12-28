@@ -1,4 +1,4 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package test.java.ua.nure.kn.petrenko.usermanagment.gui;
 
 import java.awt.Component;
 import java.sql.Timestamp;
@@ -21,11 +21,11 @@ import junit.extensions.jfcunit.eventdata.JTableMouseEventData;
 import junit.extensions.jfcunit.eventdata.MouseEventData;
 import junit.extensions.jfcunit.eventdata.StringEventData;
 import junit.extensions.jfcunit.finder.NamedComponentFinder;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DaoFactory;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui.MainFrame;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.util.Messages;
-import test.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.MockDaoFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DaoFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.gui.MainFrame;
+import main.java.ua.nure.kn.petrenko.usermanagment.util.Messages;
+import test.java.ua.nure.kn.petrenko.usermanagment.database.MockDaoFactory;
 
 public class MainFrameTest extends JFCTestCase {
 	private MainFrame mainFrame;

@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package main.java.ua.nure.kn.petrenko.usermanagment.gui;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -9,8 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.util.Messages;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.util.Messages;
 
 public class DetailsPanel extends JPanel implements ActionListener {
 	private MainFrame parent;
@@ -28,7 +28,7 @@ public class DetailsPanel extends JPanel implements ActionListener {
 	}
 	
 	private void initialize() {
-		this.setName("detailsPanel");    
+		this.setName("detailsPanel"); //$NON-NLS-1$
 		this.setLayout(new BorderLayout());
 		this.add(getFieldPanel(), BorderLayout.NORTH);
 		this.add(getButtonPanel(), BorderLayout.SOUTH);
@@ -46,9 +46,9 @@ public class DetailsPanel extends JPanel implements ActionListener {
 	private JButton getOkButton() {
 		if (okButton == null) {
 			okButton = new JButton();
-			okButton.setText(Messages.getString("AddPanel.ok"));    
-			okButton.setName("okButton");    
-			okButton.setActionCommand("ok");    
+			okButton.setText(Messages.getString("AddPanel.ok")); //$NON-NLS-1$
+			okButton.setName("okButton"); //$NON-NLS-1$
+			okButton.setActionCommand("ok"); //$NON-NLS-1$
 			okButton.addActionListener(this);
 		}
 		return okButton;
@@ -58,9 +58,9 @@ public class DetailsPanel extends JPanel implements ActionListener {
 		if (fieldPanel == null) {
 			fieldPanel = new JPanel();
 			fieldPanel.setLayout(new GridLayout(3, 2));
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.first_name"), getFirstNameLabel());    
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.last_name"), getLastNameLabel());    
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.date_of_birth"), getDateOfBirthLabel());    
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.first_name"), getFirstNameLabel()); //$NON-NLS-1$
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.last_name"), getLastNameLabel()); //$NON-NLS-1$
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.date_of_birth"), getDateOfBirthLabel()); //$NON-NLS-1$
 		}
 		return fieldPanel;
 	}
@@ -68,7 +68,7 @@ public class DetailsPanel extends JPanel implements ActionListener {
 	private JLabel getDateOfBirthLabel() {
 		if (dateOfBirthLabel == null) {
 			dateOfBirthLabel = new JLabel();
-			dateOfBirthLabel.setName("dateOfBirthLabel");    
+			dateOfBirthLabel.setName("dateOfBirthLabel"); //$NON-NLS-1$
 		}
 		return dateOfBirthLabel;
 	}
@@ -76,7 +76,7 @@ public class DetailsPanel extends JPanel implements ActionListener {
 	private JLabel getLastNameLabel() {
 		if (lastNameLabel == null) {
 			lastNameLabel = new JLabel();
-			lastNameLabel.setName("lastNameLabel");    
+			lastNameLabel.setName("lastNameLabel"); //$NON-NLS-1$
 		}
 		return lastNameLabel;
 	}
@@ -91,7 +91,7 @@ public class DetailsPanel extends JPanel implements ActionListener {
 	private JLabel getFirstNameLabel() {
 		if (firstNameLabel == null) {
 			firstNameLabel = new JLabel();
-			firstNameLabel.setName("firstNameLabel");    
+			firstNameLabel.setName("firstNameLabel"); //$NON-NLS-1$
 		}
 		return firstNameLabel;
 	}

@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.web;
+package main.java.ua.nure.kn.petrenko.usermanagment.web;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DaoFactory;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DatabaseCustomException;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DaoFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DatabaseCustomException;
 
 public class AddServlet extends EditServlet {
     protected void processUser(User user) throws DatabaseCustomException {

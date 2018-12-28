@@ -1,11 +1,11 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.web;
+package test.java.ua.nure.kn.petrenko.usermanagment.web;
 
 import java.text.DateFormat;
 import java.util.Date;
 import org.junit.Test;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.web.EditServlet;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.web.EditServlet;
 
 
 public class EditServletTest extends MockServletTestCase {
@@ -18,12 +18,12 @@ public class EditServletTest extends MockServletTestCase {
     @Test
     public void testEdit() {
         Date date = new Date();
-        User user = new User(new Long(1000), "NameTest1", "NameTest2", date);
+        User user = new User(new Long(1000), "Oleg", "Ivanov", date);
         getMockUserDao().expect("update", user);
         
         addRequestParameter("id", "1000");
-        addRequestParameter("firstName", "NameTest1");
-        addRequestParameter("lastName", "NameTest2");
+        addRequestParameter("firstName", "Oleg");
+        addRequestParameter("lastName", "Ivanov");
         addRequestParameter("date", DateFormat.getDateInstance().format(date));
         addRequestParameter("okButton", "Ok");
         doPost();
@@ -33,7 +33,7 @@ public class EditServletTest extends MockServletTestCase {
     public void testEditEmptyFirstName() {
         Date date = new Date();
         addRequestParameter("id", "1000");
-        addRequestParameter("lastName", "NameTest2");
+        addRequestParameter("lastName", "Ivanov");
         addRequestParameter("date", DateFormat.getDateInstance().format(date));
         addRequestParameter("okButton", "Ok");
         doPost();
@@ -45,7 +45,7 @@ public class EditServletTest extends MockServletTestCase {
     public void testEditEmptyLastName() {
         Date date = new Date();
         addRequestParameter("id", "1000");
-        addRequestParameter("firstName", "NameTest2");
+        addRequestParameter("firstName", "Ivanov");
         addRequestParameter("date", DateFormat.getDateInstance().format(date));
         addRequestParameter("okButton", "Ok");
         doPost();
@@ -57,8 +57,8 @@ public class EditServletTest extends MockServletTestCase {
     public void testEditEmptyDate() {
         Date date = new Date();
         addRequestParameter("id", "1000");
-        addRequestParameter("firstName", "NameTest1");
-        addRequestParameter("lastName", "NameTest2");
+        addRequestParameter("firstName", "Oleg");
+        addRequestParameter("lastName", "Ivanov");
         addRequestParameter("okButton", "Ok");
         doPost();
         String errorMessage = (String) getWebMockObjectFactory().getMockRequest().getAttribute("error");
@@ -69,9 +69,9 @@ public class EditServletTest extends MockServletTestCase {
     public void testEditEmptyDateIncorrect() {
         Date date = new Date();
         addRequestParameter("id", "1000");
-        addRequestParameter("firstName", "NameTest1");
-        addRequestParameter("lastName", "NameTest2");
-        addRequestParameter("date", "1111");
+        addRequestParameter("firstName", "Oleg");
+        addRequestParameter("lastName", "Ivanov");
+        addRequestParameter("date", "sdsada");
         addRequestParameter("okButton", "Ok");
         doPost();
         String errorMessage = (String) getWebMockObjectFactory().getMockRequest().getAttribute("error");

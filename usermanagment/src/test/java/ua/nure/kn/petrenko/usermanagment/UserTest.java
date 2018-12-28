@@ -1,11 +1,11 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment;
+package test.java.ua.nure.kn.petrenko.usermanagment;
 
 import static org.junit.Assert.*;
 
 import java.util.Calendar;
 import java.util.Date;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.*;
+import main.java.ua.nure.kn.petrenko.usermanagment.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,9 +25,9 @@ public class UserTest {
 	
 	@Test
 	public void testGetFullName(){
-		user.setFirstName("usr1");
+		user.setFirstName("John");
 		user.setLastName("Doe");
-		assertEquals("Doe, usr1", user.getFullName());
+		assertEquals("Doe, John", user.getFullName());
 	}
 	
 	@Test

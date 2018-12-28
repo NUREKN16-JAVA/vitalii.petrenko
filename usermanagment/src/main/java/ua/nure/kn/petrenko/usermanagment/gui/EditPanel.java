@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package main.java.ua.nure.kn.petrenko.usermanagment.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,9 +13,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DatabaseCustomException;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.util.Messages;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DatabaseCustomException;
+import main.java.ua.nure.kn.petrenko.usermanagment.util.Messages;
 
 public class EditPanel extends JPanel implements ActionListener {
 	private MainFrame parent;
@@ -34,7 +34,7 @@ public class EditPanel extends JPanel implements ActionListener {
 	}
 	
 	private void initialize() {
-		this.setName("editPanel");     
+		this.setName("editPanel"); //$NON-NLS-1$
 		this.setLayout(new BorderLayout());
 		this.add(getFieldPanel(), BorderLayout.NORTH);
 		this.add(getButtonPanel(), BorderLayout.SOUTH);
@@ -53,9 +53,9 @@ public class EditPanel extends JPanel implements ActionListener {
 	private JButton getOkButton() {
 		if (okButton == null) {
 			okButton = new JButton();
-			okButton.setText(Messages.getString("AddPanel.ok"));     
-			okButton.setName("okButton");     
-			okButton.setActionCommand("ok");     
+			okButton.setText(Messages.getString("AddPanel.ok")); //$NON-NLS-1$
+			okButton.setName("okButton"); //$NON-NLS-1$
+			okButton.setActionCommand("ok"); //$NON-NLS-1$
 			okButton.addActionListener(this);
 		}
 		return okButton;
@@ -64,9 +64,9 @@ public class EditPanel extends JPanel implements ActionListener {
 	private JButton getCancelButton() {
 		if (cancelButton == null) {
 			cancelButton = new JButton();
-			cancelButton.setText(Messages.getString("AddPanel.cancel"));     
-			cancelButton.setName("cancelButton");     
-			cancelButton.setActionCommand("cancel");     
+			cancelButton.setText(Messages.getString("AddPanel.cancel")); //$NON-NLS-1$
+			cancelButton.setName("cancelButton"); //$NON-NLS-1$
+			cancelButton.setActionCommand("cancel"); //$NON-NLS-1$
 			cancelButton.addActionListener(this);
 		}
 		
@@ -77,9 +77,9 @@ public class EditPanel extends JPanel implements ActionListener {
 		if (fieldPanel == null) {
 			fieldPanel = new JPanel();
 			fieldPanel.setLayout(new GridLayout(3, 2));
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.first_name"), getFirstNameField());     
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.last_name"), getLastNameField());     
-			addLabeledField(fieldPanel, Messages.getString("AddPanel.date_of_birth"), getDateOfBirthField());     
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.first_name"), getFirstNameField()); //$NON-NLS-1$
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.last_name"), getLastNameField()); //$NON-NLS-1$
+			addLabeledField(fieldPanel, Messages.getString("AddPanel.date_of_birth"), getDateOfBirthField()); //$NON-NLS-1$
 		}
 		
 		return fieldPanel;
@@ -88,7 +88,7 @@ public class EditPanel extends JPanel implements ActionListener {
 	private JTextField getDateOfBirthField() {
 		if (dateOfBirthField == null) {
 			dateOfBirthField = new JTextField();
-			dateOfBirthField.setName("dateOfBirthField");     
+			dateOfBirthField.setName("dateOfBirthField"); //$NON-NLS-1$
 		}
 		
 		return dateOfBirthField;
@@ -97,7 +97,7 @@ public class EditPanel extends JPanel implements ActionListener {
 	private JTextField getLastNameField() {
 		if (lastNameField == null) {
 			lastNameField = new JTextField();
-			lastNameField.setName("lastNameField");     
+			lastNameField.setName("lastNameField"); //$NON-NLS-1$
 		}
 		return lastNameField;
 	}
@@ -112,7 +112,7 @@ public class EditPanel extends JPanel implements ActionListener {
 	private JTextField getFirstNameField() {
 		if (firstNameField == null) {
 			firstNameField = new JTextField();
-			firstNameField.setName("firstNameField");     
+			firstNameField.setName("firstNameField"); //$NON-NLS-1$
 		}
 		return firstNameField;
 	}

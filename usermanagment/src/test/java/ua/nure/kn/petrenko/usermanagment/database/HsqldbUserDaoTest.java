@@ -1,4 +1,4 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.database;
+package test.java.ua.nure.kn.petrenko.usermanagment.database;
 
 import static org.junit.Assert.*;
 import java.text.DateFormat;
@@ -17,11 +17,11 @@ import org.dbunit.dataset.xml.XmlDataSet;
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.TestCase;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.*;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.ConnectionFactory;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.ConnectionFactoryImplementation;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DatabaseCustomException;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.HsqldbUserDao;
+import main.java.ua.nure.kn.petrenko.usermanagment.*;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.ConnectionFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.ConnectionFactoryImplementation;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DatabaseCustomException;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.HsqldbUserDao;
 
 public class HsqldbUserDaoTest extends DatabaseTestCase {
 	
@@ -125,7 +125,7 @@ public class HsqldbUserDaoTest extends DatabaseTestCase {
 	public void testCreate() {
 		 try {
 			 User user = new User();
-			 user.setFirstName("usr1");
+			 user.setFirstName("John");
 			 user.setLastName("Doe");
 			 
 			 user.setDateOfBirthd(new Date(1907,5,3));

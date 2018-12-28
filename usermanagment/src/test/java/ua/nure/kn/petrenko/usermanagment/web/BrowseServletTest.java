@@ -1,4 +1,4 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.web;
+package test.java.ua.nure.kn.petrenko.usermanagment.web;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -6,8 +6,8 @@ import java.util.Date;
 import java.util.List;
 import org.junit.Test;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.web.BrowseServlet;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.web.BrowseServlet;
 
 public class BrowseServletTest extends MockServletTestCase {
     protected void setUp() throws Exception {
@@ -17,7 +17,7 @@ public class BrowseServletTest extends MockServletTestCase {
     
     @Test
     public void testBrowse() {
-        User user = new User(new Long(1000), "NameTest1", "NameTest2", new Date());
+        User user = new User(new Long(1000), "Oleg", "Ivanov", new Date());
         List list = Collections.singletonList(user);
         getMockUserDao().expectAndReturn("findAll", list);
         doGet();
@@ -28,7 +28,7 @@ public class BrowseServletTest extends MockServletTestCase {
     
     @Test
     public void testEdit() {
-        User user = new User(new Long(1000), "NameTest1", "NameTest2", new Date());
+        User user = new User(new Long(1000), "Oleg", "Ivanov", new Date());
         getMockUserDao().expectAndReturn("find", new Long(1000), user);
         addRequestParameter("editButton", "Edit");
         addRequestParameter("id", "1000");
@@ -40,7 +40,7 @@ public class BrowseServletTest extends MockServletTestCase {
     
     @Test
     public void testEditWithoutId() {
-        User user = new User(new Long(1000), "NameTest1", "NameTest2", new Date());
+        User user = new User(new Long(1000), "Oleg", "Ivanov", new Date());
         addRequestParameter("editButton", "Edit");
         doPost();
         assertNotNull("Could not find error message", getWebMockObjectFactory().getMockRequest().getAttribute("error"));

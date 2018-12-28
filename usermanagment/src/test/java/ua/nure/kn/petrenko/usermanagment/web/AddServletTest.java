@@ -1,11 +1,11 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.web;
+package test.java.ua.nure.kn.petrenko.usermanagment.web;
 import java.text.DateFormat;
 import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.web.AddServlet;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.web.AddServlet;
 
 public class AddServletTest extends MockServletTestCase {
     protected void setUp() throws Exception {
@@ -16,12 +16,12 @@ public class AddServletTest extends MockServletTestCase {
     @Test
     public void testAdd() {
         Date date = new Date();
-        User newUser = new User("NameTest1", "NameTest2", date);
-        User user = new User(new Long(1000), "NameTest1", "NameTest2", date);
+        User newUser = new User("Oleg", "Ivanov", date);
+        User user = new User(new Long(1000), "Oleg", "Ivanov", date);
         getMockUserDao().expectAndReturn("create", newUser, user);
         
-        addRequestParameter("firstName", "NameTest1");
-        addRequestParameter("lastName", "NameTest2");
+        addRequestParameter("firstName", "Oleg");
+        addRequestParameter("lastName", "Ivanov");
         addRequestParameter("date", DateFormat.getDateInstance().format(date));
         addRequestParameter("okButton", "Ok");
         doPost();
@@ -30,7 +30,7 @@ public class AddServletTest extends MockServletTestCase {
     @Test
     public void testAddEmptyFirstName() {
         Date date = new Date();
-        addRequestParameter("lastName", "NameTest2");
+        addRequestParameter("lastName", "Ivanov");
         addRequestParameter("date", DateFormat.getDateInstance().format(date));
         addRequestParameter("okButton", "Ok");
         doPost();
@@ -41,7 +41,7 @@ public class AddServletTest extends MockServletTestCase {
     @Test
     public void testAddEmptyLastName() {
         Date date = new Date();
-        addRequestParameter("firstName", "NameTest1");
+        addRequestParameter("firstName", "Oleg");
         addRequestParameter("date", DateFormat.getDateInstance().format(date));
         addRequestParameter("okButton", "Ok");
         doPost();
@@ -52,8 +52,8 @@ public class AddServletTest extends MockServletTestCase {
     @Test
     public void testAddEmptyDate() {
         Date date = new Date();
-        addRequestParameter("firstName", "NameTest1");
-        addRequestParameter("lastName", "NameTest2");
+        addRequestParameter("firstName", "Oleg");
+        addRequestParameter("lastName", "Ivanov");
         addRequestParameter("okButton", "Ok");
         doPost();
         String errorMessage = (String) getWebMockObjectFactory().getMockRequest().getAttribute("error");
@@ -63,8 +63,8 @@ public class AddServletTest extends MockServletTestCase {
     @Test
     public void testAddEmptyDateIncorrect() {
         Date date = new Date();
-        addRequestParameter("firstName", "NameTest1");
-        addRequestParameter("lastName", "NameTest2");
+        addRequestParameter("firstName", "Oleg");
+        addRequestParameter("lastName", "Ivanov");
         addRequestParameter("date", "asdasdasdas");
         addRequestParameter("okButton", "Ok");
         doPost();

@@ -49,10 +49,10 @@ public class AccountDAOTest extends ConnectorTestCaseAdapter
     
     public void testCreateAccountVariousUsers()
     {
-        prepareValidInteraction("usr1", "Doe", 500);
+        prepareValidInteraction("John", "Doe", 500);
         prepareValidInteraction("Jane", "Doe", 1000);
         prepareValidInteraction("Brian", "Doe", 1500);
-        assertEquals(500, dao.createAccount("usr1", "Doe"));
+        assertEquals(500, dao.createAccount("John", "Doe"));
         assertEquals(1000, dao.createAccount("Jane", "Doe"));
         assertEquals(1500, dao.createAccount("Brian", "Doe"));
         assertEquals(-1, dao.createAccount("Judith", "Doe"));
@@ -62,8 +62,8 @@ public class AccountDAOTest extends ConnectorTestCaseAdapter
     
     public void testCreateAccountSuccessful()
     {
-        prepareValidInteraction("usr1", "Doe", 500);
-        assertEquals(500, dao.createAccount("usr1", "Doe"));
+        prepareValidInteraction("John", "Doe", 500);
+        assertEquals(500, dao.createAccount("John", "Doe"));
         verifyLocalTransactionCommitted();
         verifyNumberCreatedIndexedRecords(1);
         verifyAllInteractionsClosed();
@@ -73,7 +73,7 @@ public class AccountDAOTest extends ConnectorTestCaseAdapter
     public void testCreateAccountFailure()
     {
         getInteractionHandler().addImplementor(new GenericFailureInteraction());
-        assertEquals(-1, dao.createAccount("usr1", "Doe"));
+        assertEquals(-1, dao.createAccount("John", "Doe"));
         verifyLocalTransactionRolledBack();
         verifyNumberCreatedIndexedRecords(1);
         verifyAllInteractionsClosed();

@@ -1,14 +1,14 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package main.java.ua.nure.kn.petrenko.usermanagment.gui;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DaoFactory;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DaoFactoryImpl;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.UserDao;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.util.Messages;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DaoFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DaoFactoryImpl;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.UserDao;
+import main.java.ua.nure.kn.petrenko.usermanagment.util.Messages;
 
 public class MainFrame extends JFrame {
 	
@@ -35,7 +35,7 @@ public class MainFrame extends JFrame {
 	private void initialize() {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-		this.setTitle(Messages.getString("MainFrame.user_management"));      
+		this.setTitle(Messages.getString("MainFrame.user_management")); //$NON-NLS-1$
 		this.setContentPane(getControlPanel());
 	}
 	

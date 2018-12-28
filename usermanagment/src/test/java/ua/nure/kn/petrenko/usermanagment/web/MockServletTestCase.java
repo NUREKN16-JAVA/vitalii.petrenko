@@ -1,12 +1,13 @@
-package test.java.ua.nure.kn.vitalii.petrenko.usermanagment.web;
+package test.java.ua.nure.kn.petrenko.usermanagment.web;
 
 import java.util.Properties;
 import com.mockobjects.dynamic.Mock;
 import com.mockrunner.servlet.BasicServletTestCaseAdapter;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DaoFactory;
-import test.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.MockDaoFactory;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DaoFactory;
+import test.java.ua.nure.kn.petrenko.usermanagment.database.MockDaoFactory;
 
+// эххххххххххххххх
 public abstract class MockServletTestCase extends BasicServletTestCaseAdapter {
 	private Mock mockUserDao;
 	   

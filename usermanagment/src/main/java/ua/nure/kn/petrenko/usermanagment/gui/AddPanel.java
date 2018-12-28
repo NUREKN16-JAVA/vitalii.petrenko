@@ -1,4 +1,4 @@
-package main.java.ua.nure.kn.vitalii.petrenko.usermanagment.gui;
+package main.java.ua.nure.kn.petrenko.usermanagment.gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -14,10 +14,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.User;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.database.DatabaseCustomException;
-import main.java.ua.nure.kn.vitalii.petrenko.usermanagment.util.Messages;
+import main.java.ua.nure.kn.petrenko.usermanagment.User;
+import main.java.ua.nure.kn.petrenko.usermanagment.database.DatabaseCustomException;
+import main.java.ua.nure.kn.petrenko.usermanagment.util.Messages;
 
+// panel for adding user
 public class AddPanel extends JPanel implements ActionListener {
 	private JPanel buttonPanel;
 	private JButton cancelButton;
@@ -76,7 +77,7 @@ public class AddPanel extends JPanel implements ActionListener {
 	protected JTextField getFirstNameField() {
 		if (firstNameField == null) {
             firstNameField = new JTextField();
-            firstNameField.setName("firstNameField");   
+            firstNameField.setName("firstNameField");  //$NON-NLS-1$
         }
         return firstNameField;
 	}
@@ -93,9 +94,9 @@ public class AddPanel extends JPanel implements ActionListener {
     private JButton getCancelButton() {
         if (cancelButton == null) {
             cancelButton = new JButton();
-            cancelButton.setText(Messages.getString("AddPanel.cancel"));  
-            cancelButton.setName("cancelButton");   
-            cancelButton.setActionCommand("cancel");   
+            cancelButton.setText(Messages.getString("AddPanel.cancel")); //$NON-NLS-1$
+            cancelButton.setName("cancelButton");  //$NON-NLS-1$
+            cancelButton.setActionCommand("cancel");  //$NON-NLS-1$
             cancelButton.addActionListener(this);
         }
         return cancelButton;
@@ -104,9 +105,9 @@ public class AddPanel extends JPanel implements ActionListener {
     private JButton getOkButton() {
         if (okButton == null) {
             okButton = new JButton();
-            okButton.setText(Messages.getString("AddPanel.ok"));  
-            okButton.setName("okButton");  
-            okButton.setActionCommand("ok");   
+            okButton.setText(Messages.getString("AddPanel.ok")); //$NON-NLS-1$
+            okButton.setName("okButton"); //$NON-NLS-1$
+            okButton.setActionCommand("ok");  //$NON-NLS-1$
             okButton.addActionListener(this);
         }
         return okButton;

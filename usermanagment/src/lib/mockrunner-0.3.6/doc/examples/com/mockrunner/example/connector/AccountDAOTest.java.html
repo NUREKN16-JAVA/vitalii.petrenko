@@ -66,10 +66,10 @@
 <A NAME="49"></A>    
 <A NAME="50"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> testCreateAccountVariousUsers()
 <A NAME="51"></A>    {
-<A NAME="52"></A>        prepareValidInteraction(<FONT ID="StringLiteral">"usr1"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>, <FONT ID="IntegerLiteral">500</FONT>);
+<A NAME="52"></A>        prepareValidInteraction(<FONT ID="StringLiteral">"John"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>, <FONT ID="IntegerLiteral">500</FONT>);
 <A NAME="53"></A>        prepareValidInteraction(<FONT ID="StringLiteral">"Jane"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>, <FONT ID="IntegerLiteral">1000</FONT>);
 <A NAME="54"></A>        prepareValidInteraction(<FONT ID="StringLiteral">"Brian"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>, <FONT ID="IntegerLiteral">1500</FONT>);
-<A NAME="55"></A>        assertEquals(<FONT ID="IntegerLiteral">500</FONT>, dao.createAccount(<FONT ID="StringLiteral">"usr1"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
+<A NAME="55"></A>        assertEquals(<FONT ID="IntegerLiteral">500</FONT>, dao.createAccount(<FONT ID="StringLiteral">"John"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
 <A NAME="56"></A>        assertEquals(<FONT ID="IntegerLiteral">1000</FONT>, dao.createAccount(<FONT ID="StringLiteral">"Jane"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
 <A NAME="57"></A>        assertEquals(<FONT ID="IntegerLiteral">1500</FONT>, dao.createAccount(<FONT ID="StringLiteral">"Brian"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
 <A NAME="58"></A>        assertEquals(-<FONT ID="IntegerLiteral">1</FONT>, dao.createAccount(<FONT ID="StringLiteral">"Judith"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
@@ -79,8 +79,8 @@
 <A NAME="62"></A>    
 <A NAME="63"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> testCreateAccountSuccessful()
 <A NAME="64"></A>    {
-<A NAME="65"></A>        prepareValidInteraction(<FONT ID="StringLiteral">"usr1"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>, <FONT ID="IntegerLiteral">500</FONT>);
-<A NAME="66"></A>        assertEquals(<FONT ID="IntegerLiteral">500</FONT>, dao.createAccount(<FONT ID="StringLiteral">"usr1"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
+<A NAME="65"></A>        prepareValidInteraction(<FONT ID="StringLiteral">"John"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>, <FONT ID="IntegerLiteral">500</FONT>);
+<A NAME="66"></A>        assertEquals(<FONT ID="IntegerLiteral">500</FONT>, dao.createAccount(<FONT ID="StringLiteral">"John"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
 <A NAME="67"></A>        verifyLocalTransactionCommitted();
 <A NAME="68"></A>        verifyNumberCreatedIndexedRecords(<FONT ID="IntegerLiteral">1</FONT>);
 <A NAME="69"></A>        verifyAllInteractionsClosed();
@@ -90,7 +90,7 @@
 <A NAME="73"></A>    <FONT ID="Public">public</FONT> <FONT ID="Void">void</FONT> testCreateAccountFailure()
 <A NAME="74"></A>    {
 <A NAME="75"></A>        getInteractionHandler().addImplementor(<FONT ID="New">new</FONT> GenericFailureInteraction());
-<A NAME="76"></A>        assertEquals(-<FONT ID="IntegerLiteral">1</FONT>, dao.createAccount(<FONT ID="StringLiteral">"usr1"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
+<A NAME="76"></A>        assertEquals(-<FONT ID="IntegerLiteral">1</FONT>, dao.createAccount(<FONT ID="StringLiteral">"John"</FONT>, <FONT ID="StringLiteral">"Doe"</FONT>));
 <A NAME="77"></A>        verifyLocalTransactionRolledBack();
 <A NAME="78"></A>        verifyNumberCreatedIndexedRecords(<FONT ID="IntegerLiteral">1</FONT>);
 <A NAME="79"></A>        verifyAllInteractionsClosed();
